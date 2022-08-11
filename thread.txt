@@ -1,0 +1,93 @@
+1)ThreadDemo.java
+package learnings3;
+public class ThreadDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		MyThread mt = new MyThread();
+		mt.start();
+		mt.start();
+		mt.run();
+		
+		MyThread mt2 = new MyThread();
+		mt2.start();
+		
+		for(int i=1;i<=5;i++)
+		{
+			System.out.println("ThreadDemo"+i);
+		}
+			
+	}
+
+}
+
+2)
+
+package learnings3;
+public class ThreadDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		MyThread mt = new MyThread();
+		mt.start();
+		System.out.println("mt id " +  mt.getId());
+		System.out.println("mt name " +  mt.getName());
+		System.out.println("mt priority "+  mt.getPriority());
+		System.out.println("mt state " + mt.getState() );
+		mt.setName("ABCD");
+		mt.setPriority(10);
+		System.out.println("mt state " +mt.getState() );
+		System.out.println("mt name " + mt.getName());
+		System.out.println("mt priority " + mt.getPriority());
+		
+		
+		System.out.println("Thread MIN "+ Thread.MIN_PRIORITY);
+		System.out.println("Thread MAX "+ Thread.MAX_PRIORITY);
+		System.out.println("Thread NORM "+ Thread.NORM_PRIORITY);
+		
+		//mt.start();
+		//mt.run();
+		
+		MyThread mt2 = new MyThread();
+		mt2.start();
+		
+		System.out.println("mt2 state"+mt2.getState());
+		System.out.println("mt2 id "+ mt2.getId());
+		System.out.println("mt2 name "+ mt2.getName());
+		System.out.println("mt2 priority "+ mt2.getPriority());
+		mt2.setName("PQRS");
+		mt2.setPriority(8);
+		System.out.println("mt2 state "+mt2.getState());
+		System.out.println("mt2 name " + mt2.getName());
+		System.out.println("mt2 priority " + mt2.getPriority());
+		
+		for(int i=1;i<=5;i++)
+		{
+			System.out.println("ThreadDemo "+i);
+		}
+			
+	}
+
+}
+
+3)
+
+MyThread.java
+package learnings3;
+
+public class MyThread extends Thread{
+
+	public void run() {
+		// TODO Auto-generated method stub
+		
+		for(int i=1;i<=5;i++)
+		{
+			System.out.println("MyThread"+i);
+		}
+		
+	}
+
+}
+
